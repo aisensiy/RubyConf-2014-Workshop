@@ -58,4 +58,12 @@ describe 'calc' do
   it 'should eval 15/6 to 2' do
     Calc.eval('15/6').should be 2
   end
+
+  it 'should eval 3-5 to 0' do
+    expect(Calc.eval('3-5')).to be_eql 0
+  end
+
+  it 'should eval 4-10' do
+    expect(Calc.eval('4-10')).to be_eql 0
+  end
 end
