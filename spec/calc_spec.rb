@@ -74,4 +74,12 @@ describe 'calc' do
   it 'should eval 3*2*2 to 12' do
     expect(Calc.eval('3*2*2')).to be_eql 12
   end
+
+  it 'should eval 1-1+1 to 1' do
+    expect(Calc.eval('1-1+1')).to eql 1
+  end
+
+  it 'should eval 1-1+1+3 to 4' do
+    expect(Calc.eval('1-1+1+3')).to eql 4
+  end
 end
