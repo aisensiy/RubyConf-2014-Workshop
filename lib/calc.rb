@@ -3,15 +3,15 @@ module Calc
     opt_pos = string =~ /[\+\-\*\/]/
     if !opt_pos.nil?
 
-      left = string[0...opt_pos].to_i
       opt = string[opt_pos]
-      right = string[(opt_pos + 1)...string.size].to_i
+
+      values = string.split(opt).map(&:to_i)
 
       case opt
-        when '+' then left + right
-        when '-' then [0, left - right].max
-        when '*' then left * right
-        when '/' then left / right
+        when '+' then values.reduce(:+)
+        when '-' then [0, values.reduce(:-)].max
+        when '*' then values.reduce(:*)
+        when '/' then values.reduce(:/)
       end
 
     else
