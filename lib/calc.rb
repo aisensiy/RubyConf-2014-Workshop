@@ -9,7 +9,7 @@ module Calc
 
       case opt
         when '+' then left + right
-        when '-' then left - right
+        when '-' then [0, left - right].max
         when '*' then left * right
         when '/' then left / right
       end
