@@ -63,7 +63,15 @@ describe 'calc' do
     expect(Calc.eval('3-5')).to be_eql 0
   end
 
-  it 'should eval 4-10' do
+  it 'should eval 4-10 to 0' do
     expect(Calc.eval('4-10')).to be_eql 0
+  end
+
+  it 'should eval 1+1+1 to 3' do
+    expect(Calc.eval('1+1+1')).to be_eql 3
+  end
+
+  it 'should eval 3*2*2 to 12' do
+    expect(Calc.eval('3*2*2')).to be_eql 12
   end
 end
