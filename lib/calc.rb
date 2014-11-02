@@ -7,14 +7,11 @@ module Calc
       opt = string[opt_pos]
       right = string[(opt_pos + 1)...string.size].to_i
 
-      if opt == '+'
-        left + right
-      elsif opt == '*'
-        left * right
-      elsif opt == '/'
-        left / right
-      else
-        left - right
+      case opt
+        when '+' then left + right
+        when '-' then left - right
+        when '*' then left * right
+        when '/' then left / right
       end
 
     else
